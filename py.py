@@ -1,20 +1,28 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template, jsonify
 import cohere
-import pyperclip
+import gi
 
-app = Flask(__name__)
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk
+
+app = Flask(__name__, static_folder="static")
 
 COHERE_API_KEY = "LtpNmUJdnTSDl4HW06g7KUitLN9tg3P9HxjmNoJf"
 co = cohere.Client(COHERE_API_KEY)
 
+def get_clipboard_text():
+    clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+    text = clipboard.wait_for_text()
+    return text if text else ""
+
 @app.route("/")
 def home():
-    return "✅ Servidor con portapapeles + Cohere activo"
+    return render_template("index.html")
 
 @app.route("/analizar", methods=["GET"])
 def analizar():
     try:
-        texto = pyperclip.paste()
+        texto = get_clipboard_text()
     except Exception as e:
         return jsonify({"respuesta": f"Error accediendo al portapapeles: {e}"})
 

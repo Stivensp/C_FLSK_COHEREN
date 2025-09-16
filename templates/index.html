@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stilo.css">
+    <link rel="stylesheet" href="/static/stilo.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus - Campus</title>
 </head>
 <body>
     <header class="header">
         <div class="h1">
-            <img src="/public/1.png" alt="">
+            <img src="/static/public/1.png" alt="">
         </div>
         <div class="h2">
             <p>Portal Campers</p>
         </div>
         <div class="h3">
             <div></div>
-            <img style="width: 10%;" src="/public/coin.svg" alt="">
+            <img style="width: 10%;" src="/static/public/coin.svg" alt="">
             <p class="setenta">70</p>
-            <img style="width: 21%; margin-bottom: 10px; margin-right: 15px;" src="/public/campana.png" alt="">
-            <img style="width: 22%;" src="/public/mia.png" alt="">
+            <img style="width: 21%; margin-bottom: 10px; margin-right: 15px;" src="/static/public/campana.png" alt="">
+            <img style="width: 22%;" src="/static/public/mia.png" alt="">
         </div>
     </header>
 
     <main class="main">
     <aside class="aside">
         <div class="menu">
-            <img src="/public/ham.png" alt="">
+            <img src="/static/public/ham.png" alt="">
             <p style="margin-top: 5px;">Menú principal</p>
         </div>
         <div style="position: relative;" class="aside_img">
-            <img style="width: 80px; position: absolute; bottom: 25px; left: 25px;" src="/public/12.png" alt="">
+            <img style="width: 80px; position: absolute; bottom: 25px; left: 25px;" src="/static/public/12.png" alt="">
                         <div class="r_lo">
                 <p>Razonamiento Lóg...</p>
             </div>
@@ -40,47 +40,47 @@
 
         </div>
         <div class="aside_twobottom">
-           <img src="/public/buttos.png" alt="">
+           <img src="/static/public/buttos.png" alt="">
         </div>
         <div class="aside_trainer_curso">
             <p style="font-family: m; color: white; font-size: 15px;">Trainer del curso</p>
-            <img style="width: 145px;" src="/public/prueba logica.png" alt="">
+            <img style="width: 145px;" src="/static/public/prueba logica.png" alt="">
         </div>
         <div class="nav">
             <div class="inav1">
-                <img src="/public/h1.png" alt="">
+                <img src="/static/public/h1.png" alt="">
                 <p style="padding-top: 5px;">Calendario</p>
             </div>
             <div class="inav2">
-                <img src="/public/h2.png" alt="">
+                <img src="/static/public/h2.png" alt="">
                 <p style="padding-top: 5px;">Notas del curso</p>
             </div>
             <div class="inav3">
-                <img src="/public/h3.png" alt="">
+                <img src="/static/public/h3.png" alt="">
                 <p style="padding-top: 5px;">Quices</p>
             </div>
             <div class="inav4">
-                <img src="/public/h4.png" alt="">
+                <img src="/static/public/h4.png" alt="">
                 <p style="padding-top: 5px;">Retos</p>
             </div>
             <div class="inav5">
-                <img src="/public/h5.png" alt="">
+                <img src="/static/public/h5.png" alt="">
                 <p style="padding-top: 5px;">Actividades</p>
             </div>
             <div class="inav6">
-                <img src="/public/h6.png" alt="">
+                <img src="/static/public/h6.png" alt="">
                 <p style="padding-top: 5px;">Exámenes</p>
             </div>
             <div class="inav7">
-                <img src="/public/h7.png" alt="">
+                <img src="/static/public/h7.png" alt="">
                 <p style="padding-top: 5px;">Proyectos</p>
             </div>
             <div class="inav8">
-                <img src="/public/h8.png" alt="">
+                <img src="/static/public/h8.png" alt="">
                 <p style="padding-top: 5px;">Recursos</p>                
             </div>
             <div class="inav9">
-                <img src="/public/h9.png" alt="">
+                <img src="/static/public/h9.png" alt="">
                 <p style="padding-top: 5px;">Votaciones</p>
             </div>
         </div>
@@ -88,16 +88,16 @@
     <section class="section">
         <div class="subheader">
             <div class="sh_left">
-                <img style="width: 17px; " src="/public/arrow.png" alt="">
+                <img style="width: 17px; " src="/static/public/arrow.png" alt="">
                 <p style="margin-top: 3px;">Regresar a los cursos</p>
             </div>
             <div class="sh_right">
-                <img src="/public/rigt.png" alt="">
+                <img src="/static/public/rigt.png" alt="">
             </div>
         </div>
         <div class="s_canva">
             <div class="lsession">
-                <img src="/public/l_s.png" alt="">
+                <img src="/static/public/l_s.png" alt="">
             </div>
 
             <div class="container">
@@ -135,7 +135,7 @@
                         </div>
                 </div>
                 <div class="right">
-                    <img style=" height: 410px;" src="/public/rto logico.png" alt="">
+                    <img style=" height: 410px;" src="/static/public/rto logico.png" alt="">
                 </div>
             </div>
         </div>
@@ -143,10 +143,17 @@
     </main>
 </body>
 <script>
-document.getElementById("btnAnalizar").addEventListener("click", async () => {
-    const res = await fetch("http://127.0.0.1:5500/analizar"); 
-    const data = await res.json();
-    document.getElementById("resultado").innerText = data.respuesta;
-});
-</script>
+    document.getElementById("btnAnalizar").addEventListener("click", async () => {
+        try {
+            const res = await fetch("/analizar");  // ✅ No pongas IP ni puerto
+            if (!res.ok) throw new Error("Error en la respuesta del servidor");
+    
+            const data = await res.json();
+            document.getElementById("resultado").innerText = data.respuesta;
+        } catch (error) {
+            document.getElementById("resultado").innerText = "❌ Error: " + error.message;
+        }
+    });
+    </script>
+    
 </html>
