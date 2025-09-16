@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus - Campus</title>
+</head>
+<body>
+    <header class="header">
+        <div class="h1">
+            <img src="/public/1.png" alt="">
+        </div>
+        <div class="h2">
+            <p>Portal Campers</p>
+        </div>
+        <div class="h3">
+            <div></div>
+            <img style="width: 10%;" src="/public/coin.svg" alt="">
+            <p class="setenta">70</p>
+            <img style="width: 21%; margin-bottom: 10px; margin-right: 15px;" src="/public/campana.png" alt="">
+            <img style="width: 22%;" src="/public/mia.png" alt="">
+        </div>
+    </header>
+
+    <main class="main">
+    <aside class="aside">
+        <div class="menu">
+            <img src="/public/ham.png" alt="">
+            <p style="margin-top: 5px;">Menú principal</p>
+        </div>
+        <div style="position: relative;" class="aside_img">
+            <img style="width: 80px; position: absolute; bottom: 25px; left: 25px;" src="/public/12.png" alt="">
+                        <div class="r_lo">
+                <p>Razonamiento Lóg...</p>
+            </div>
+        </div>
+        <div class="aside_title">
+            <p>Razonamiento Lógico</p>
+
+        </div>
+        <div class="aside_twobottom">
+           <img src="/public/buttos.png" alt="">
+        </div>
+        <div class="aside_trainer_curso">
+            <p style="font-family: m; color: white; font-size: 15px;">Trainer del curso</p>
+            <img style="width: 145px;" src="/public/prueba logica.png" alt="">
+        </div>
+        <div class="nav">
+            <div class="inav1">
+                <img src="/public/h1.png" alt="">
+                <p style="padding-top: 5px;">Calendario</p>
+            </div>
+            <div class="inav2">
+                <img src="/public/h2.png" alt="">
+                <p style="padding-top: 5px;">Notas del curso</p>
+            </div>
+            <div class="inav3">
+                <img src="/public/h3.png" alt="">
+                <p style="padding-top: 5px;">Quices</p>
+            </div>
+            <div class="inav4">
+                <img src="/public/h4.png" alt="">
+                <p style="padding-top: 5px;">Retos</p>
+            </div>
+            <div class="inav5">
+                <img src="/public/h5.png" alt="">
+                <p style="padding-top: 5px;">Actividades</p>
+            </div>
+            <div class="inav6">
+                <img src="/public/h6.png" alt="">
+                <p style="padding-top: 5px;">Exámenes</p>
+            </div>
+            <div class="inav7">
+                <img src="/public/h7.png" alt="">
+                <p style="padding-top: 5px;">Proyectos</p>
+            </div>
+            <div class="inav8">
+                <img src="/public/h8.png" alt="">
+                <p style="padding-top: 5px;">Recursos</p>                
+            </div>
+            <div class="inav9">
+                <img src="/public/h9.png" alt="">
+                <p style="padding-top: 5px;">Votaciones</p>
+            </div>
+        </div>
+    </aside>
+    <section class="section">
+        <div class="subheader">
+            <div class="sh_left">
+                <img style="width: 17px; " src="/public/arrow.png" alt="">
+                <p style="margin-top: 3px;">Regresar a los cursos</p>
+            </div>
+            <div class="sh_right">
+                <img src="/public/rigt.png" alt="">
+            </div>
+        </div>
+        <div class="s_canva">
+            <div class="lsession">
+                <img src="/public/l_s.png" alt="">
+            </div>
+
+            <div class="container">
+                <div class="left">
+                        <div class="tema">
+                        <h2>🚀 Matemáticas + Lógica = Superpoder del programador</h2>
+                        <div class="subtema">🚀 Matemáticas, lógica y programación: el combo ganador</div>
+                        </div>
+
+                        <div class="tema">
+                        <h2> Del examen al trabajo: piensa como un crack 😎</h2>
+                        <div class="subtema">Del examen al trabajo: piensa como un crack</div>
+                        </div>
+
+                        <div class="tema">
+                        <h2> De la confusión a la claridad: tu poder lógico 🧠✨</h2>
+                        <div class="subtema">1. Razonamiento lógico</div>
+                        </div>
+
+                        <div class="tema">
+                        <h2> Razonamiento numérico: El poder de los números 😌</h2>
+                        <div class="subtema">2. Razonamiento Numérico</div>
+                        </div>
+
+                        <div class="tema">
+                            <button id="btnAnalizar">Analizar Portapapeles</button>
+
+                        <h2> La Magia de lo Abstracto 😱</h2>
+                        <div class="subtema">4. Pensamiento espacial</div><span id="resultado">p</span>
+                        </div>
+
+                        <div class="tema">
+                        <h2> Piensa en 3D: Dominando el Espacio 🔸</h2>
+                        <div class="subtema">4. Pensamiento espacial</div>
+                        </div>
+                </div>
+                <div class="right">
+                    <img style=" height: 410px;" src="/public/rto logico.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+</body>
+<script>
+document.getElementById("btnAnalizar").addEventListener("click", async () => {
+    const res = await fetch("http://127.0.0.1:5500/analizar"); 
+    const data = await res.json();
+    document.getElementById("resultado").innerText = data.respuesta;
+});
+</script>
+</html>

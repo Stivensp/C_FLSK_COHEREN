@@ -1,0 +1,15 @@
+<svg id="coin_color" data-name="coin color" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectángulo_17427" data-name="Rectángulo 17427" width="24" height="24" fill="red" opacity="0"/>
+  <g id="cryptocurrency" transform="translate(2 2)">
+    <path id="Trazado_39052" data-name="Trazado 39052" d="M279.051,0,276.1,6.266l2.949,6.266a6.266,6.266,0,0,0,0-12.531Z" transform="translate(-265.317)" fill="#edcb4c"/>
+    <path id="Trazado_39053" data-name="Trazado 39053" d="M191.2,6.266a6.266,6.266,0,0,0,6.266,6.266V0A6.266,6.266,0,0,0,191.2,6.266Z" transform="translate(-183.734)" fill="#eded51"/>
+    <path id="Trazado_39054" data-name="Trazado 39054" d="M122.754,63.734l-4.121,8.755,4.121,8.755a8.755,8.755,0,0,0,0-17.51Z" transform="translate(-113.999 -61.244)" fill="#eca647"/>
+    <path id="Trazado_39055" data-name="Trazado 39055" d="M0,72.489a8.755,8.755,0,0,0,8.755,8.755V63.734A8.755,8.755,0,0,0,0,72.489Z" transform="translate(0 -61.244)" fill="#edcb4c"/>
+    <path id="Trazado_39056" data-name="Trazado 39056" d="M151.582,127.468l-2.949,6.266L151.582,140a6.266,6.266,0,0,0,0-12.531Z" transform="translate(-142.827 -122.489)" fill="#edcb4c"/>
+    <path id="Trazado_39057" data-name="Trazado 39057" d="M63.734,133.734A6.266,6.266,0,0,0,70,140V127.468A6.266,6.266,0,0,0,63.734,133.734Z" transform="translate(-61.244 -122.489)" fill="#eded51"/>
+    <path id="Trazado_39058" data-name="Trazado 39058" d="M194.133,240.881l1.172,5.506,3.133-1.835v-3.671Z" transform="translate(-186.55 -231.472)" fill="#ec8142"/>
+    <path id="Trazado_39059" data-name="Trazado 39059" d="M143.934,240.881v3.671l3.133,1.835v-5.506Z" transform="translate(-138.312 -231.472)" fill="#eca647"/>
+    <path id="Trazado_39060" data-name="Trazado 39060" d="M195.3,197.566l3.133-1.835L195.3,193.9l-1.172,1.835Z" transform="translate(-186.55 -186.321)" fill="#eca647"/>
+    <path id="Trazado_39061" data-name="Trazado 39061" d="M147.067,193.9l-3.133,1.835,3.133,1.835Z" transform="translate(-138.312 -186.321)" fill="#edcb4c"/>
+  </g>
+</svg>
