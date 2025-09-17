@@ -318,4 +318,14 @@ border-radius: 15px;
     /* contador de temas */
     .left {
       counter-reset: tema;
+      position: relative;
+    }
+    #btnAnalizar{
+        all:unset;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--c2);
     }
